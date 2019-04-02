@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Textarea, Button } from "react-materialize";
+import { connect } from "react-redux";
+import { saveComment } from "actions";
 
-export default class CommentBox extends Component {
+class CommentBox extends Component {
   state = { comment: "" };
 
   handleChange = event => {
@@ -11,8 +13,7 @@ export default class CommentBox extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    // Call an action creator
-    // And save the comment
+    this.props.saveComment(this.state.comment);
     this.setState({ comment: "" });
   };
 
@@ -28,3 +29,8 @@ export default class CommentBox extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { saveComment }
+)(CommentBox);

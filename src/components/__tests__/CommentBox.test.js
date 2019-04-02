@@ -1,5 +1,6 @@
 import { mount, unmount } from "enzyme";
 import React from "react";
+import Root from "Root";
 import CommentBox from "components/CommentBox";
 import CommentList from "components/CommentList";
 import "materialize-css/dist/css/materialize.min.css";
@@ -8,7 +9,11 @@ import M from "materialize-css";
 let component;
 
 beforeEach(() => {
-  component = mount(<CommentBox />);
+  component = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
 });
 
 afterEach(() => {

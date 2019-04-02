@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Collection, CollectionItem } from "react-materialize";
+import { CollectionItem } from "react-materialize";
 
 class CommentList extends Component {
   render() {
