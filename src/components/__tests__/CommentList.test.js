@@ -2,16 +2,21 @@ import React from "react";
 import { mount } from "enzyme";
 import CommentList from "components/CommentList";
 import Root from "Root";
-import { CollectionItem } from "react-materialize";
 
 let component;
 
 beforeEach(() => {
+  const initialState = {
+    comments: ["Comment 1", "Comment 2"]
+  };
+
   component = mount(
-    <Root>
+    <Root initialState={initialState}>
       <CommentList />
     </Root>
   );
 });
 
-it("creates one Collection Item per comments.", () => {});
+it("creates one LI per comments.", () => {
+  console.log(component.find("li").length);
+});
