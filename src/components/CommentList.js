@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import { CollectionItem } from "react-materialize";
+import { connect } from "react-redux";
 
 class CommentList extends Component {
+  renderComments() {
+    return this.props.comments.map(comment => {
+      return <CollectionItem key={comment}>{comment}</CollectionItem>;
+    });
+  }
   render() {
-    return (
-      <div>
-        <CollectionItem>
-          <img src="" alt="" />
-          Ivan Garcia
-        </CollectionItem>
-      </div>
-    );
+    return <div>{this.renderComments()}</div>;
   }
 }
 
-export default CommentList;
+const mapStateToProps = state => ({
+  comments: state.comments
+});
+
+export default connect(mapStateToProps)(CommentList);
