@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Textarea, Button } from "react-materialize";
 import { connect } from "react-redux";
-import { saveComment } from "actions";
+import { saveComment, fetchComments } from "actions";
 
 class CommentBox extends Component {
   state = { comment: "" };
@@ -25,6 +25,9 @@ class CommentBox extends Component {
           <Textarea onChange={this.handleChange} value={this.state.comment} />
           <Button>Submit</Button>
         </form>
+        <button className="fetch-comments" onClick={this.props.fetchComments}>
+          Fetch Comments
+        </button>
       </div>
     );
   }
@@ -32,5 +35,5 @@ class CommentBox extends Component {
 
 export default connect(
   null,
-  { saveComment }
+  { saveComment, fetchComments }
 )(CommentBox);

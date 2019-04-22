@@ -3,7 +3,6 @@ import React from "react";
 import Root from "Root";
 import CommentBox from "components/CommentBox";
 import "materialize-css/dist/css/materialize.min.css";
-import M from "materialize-css";
 
 let component;
 
@@ -19,9 +18,9 @@ afterEach(() => {
   component.unmount();
 });
 
-it("has a text area and a button", () => {
+it("has a text area and two buttons", () => {
   expect(component.find("textarea").length).toEqual(1);
-  expect(component.find("button").length).toEqual(1);
+  expect(component.find("button").length).toEqual(2);
 });
 
 describe("the text area", () => {

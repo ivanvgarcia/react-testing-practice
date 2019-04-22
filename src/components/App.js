@@ -7,7 +7,7 @@ import { Row, Col, Collection } from "react-materialize";
 const App = () => {
   return (
     <div>
-      <Navigation />
+      {/* <Navigation /> */}
       <CommentBox />
       <Row>
         <Col m={10} s={12} offset={"m1"}>
